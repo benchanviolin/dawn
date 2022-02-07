@@ -295,3 +295,11 @@
 .card-article-info {
   margin-top: 1rem;
 }
+
+.card__badge {
+  display: none;
+}
+
+.card__heading_title {
+  margin-bottom: 0;
+}

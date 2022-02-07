@@ -61,6 +61,7 @@
           "type": "main-password-footer"
         }
       }
-    }
+    },
+    "content_for_index": []
   }
 }
