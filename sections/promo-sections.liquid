@@ -1,4 +1,4 @@
-{{ 'component-promo-images.css' | asset_url | stylesheet_tag }}
+{{ 'component-promo-sections.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -14,13 +14,13 @@
   }
 {%- endstyle -%}
 
-<div class="promo-images promo-images--{{ section.settings.content_layout }} isolate{% if settings.text_boxes_border_thickness > 0 and settings.text_boxes_border_opacity > 0 and settings.media_border_thickness > 0 and settings.media_border_opacity > 0 %} collapse-borders{% endif %}{% unless section.settings.color_scheme == 'background-1' and settings.media_border_thickness > 0 and settings.text_boxes_shadow_opacity == 0 and settings.text_boxes_border_thickness == 0 or settings.text_boxes_border_opacity == 0 %} collapse-corners{% endunless %} section-{{ section.id }}-padding">
+<div class="promo-sections promo-sections--{{ section.settings.content_layout }} isolate{% if settings.text_boxes_border_thickness > 0 and settings.text_boxes_border_opacity > 0 and settings.media_border_thickness > 0 and settings.media_border_opacity > 0 %} collapse-borders{% endif %}{% unless section.settings.color_scheme == 'background-1' and settings.media_border_thickness > 0 and settings.text_boxes_shadow_opacity == 0 and settings.text_boxes_border_thickness == 0 or settings.text_boxes_border_opacity == 0 %} collapse-corners{% endunless %} section-{{ section.id }}-padding">
   <div>
     {%- for block in section.blocks -%}
       {% case block.type %}
         {%- when 'image' -%}
-          <div class="page-width promo-images__media-item promo-images__media-item--{{ block.settings.desktop_image_width }} promo-images__media-item--{{ block.settings.desktop_content_alignment }}{% if block.settings.desktop_content_alignment == 'center' %} promo-images-center{% elsif block.settings.desktop_content_position == 'right' %} promo-images-right{% endif %}">
-            <div class="promo-images__media promo-images__media--{{ block.settings.height }} gradient color-{{ block.settings.color_scheme }} {% if block.settings.image != blank %}media{% else %}promo-images__media--placeholder placeholder{% endif %}"
+          <div class="page-width promo-sections__media-item promo-sections__media-item--{{ block.settings.desktop_image_width }} promo-sections__media-item--{{ block.settings.desktop_content_alignment }}{% if block.settings.desktop_content_alignment == 'center' %} promo-sections-center{% elsif block.settings.desktop_content_position == 'right' %} promo-sections-right{% endif %}">
+            <div class="promo-sections__media promo-sections__media--{{ block.settings.height }} gradient color-{{ block.settings.color_scheme }} {% if block.settings.image != blank %}media{% else %}promo-sections__media--placeholder placeholder{% endif %}"
               {% if block.settings.height == 'adapt' and block.settings.image != blank %} style="padding-bottom: {{ 1 | divided_by: block.settings.image.aspect_ratio | times: 100 }}%;"{% endif %}
             >
               {%- if block.settings.image != blank -%}
@@ -45,14 +45,14 @@
             </div>
           </div>
           {% if block.settings.banner_text %}
-          <div class="promo-images__banner-text promo-images__color-yellow">
+          <div class="promo-sections__banner-text promo-sections__color-yellow">
             <h1>
               {{ block.settings.banner_text }}
             </h1>
           </div>
           {% endif %}
           {% if block.settings.bullet_text %}
-          <div class="promo-images__bullet-text">
+          <div class="promo-sections__bullet-text">
             <ul>
               {%- assign spl = block.settings.bullet_text | newline_to_br | split: "<br />" -%}
               {%- for text in spl -%}
@@ -62,9 +62,9 @@
           </div>
           {% endif %}
         {%- when 'caption' -%}
-          <p class="promo-images__text promo-images__text--caption {{ block.settings.text_style }} {{ block.settings.text_style }}--{{ block.settings.text_size }} {{ block.settings.text_style }}" {{ block.shopify_attributes }}>{{ block.settings.caption | escape }}</p>
+          <p class="promo-sections__text promo-sections__text--caption {{ block.settings.text_style }} {{ block.settings.text_style }}--{{ block.settings.text_size }} {{ block.settings.text_style }}" {{ block.shopify_attributes }}>{{ block.settings.caption | escape }}</p>
         {%- when 'text' -%}
-          <div class="promo-images__text rte {{ block.settings.text_style }}" {{ block.shopify_attributes }}>{{ block.settings.text }}</div>
+          <div class="promo-sections__text rte {{ block.settings.text_style }}" {{ block.shopify_attributes }}>{{ block.settings.text }}</div>
         {%- when 'button' -%}
           {%- if block.settings.button_label != blank -%}
             <a{% if block.settings.button_link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.button_link }}"{% endif %} class="button{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}" {{ block.shopify_attributes }}>
@@ -78,7 +78,8 @@
 
 {% schema %}
 {
-  "name": "t:sections.promo-images.name",
+  "name": "t:sections.promo-sections.name",
+  "tag": "section",
   "class": "section",
   "settings": [
     {
@@ -109,13 +110,13 @@
   "blocks": [
     {
       "type": "image",
-      "name": "t:sections.promo-images.blocks.image.name",
+      "name": "t:sections.promo-sections.blocks.image.name",
       "limit": 10,
       "settings": [
         {
           "type": "image_picker",
           "id": "image",
-          "label": "t:sections.promo-images.settings.image.label"
+          "label": "t:sections.promo-sections.settings.image.label"
         },
         {
           "type": "select",
@@ -123,19 +124,19 @@
           "options": [
             {
               "value": "adapt",
-              "label": "t:sections.promo-images.settings.height.options__1.label"
+              "label": "t:sections.promo-sections.settings.height.options__1.label"
             },
             {
               "value": "small",
-              "label": "t:sections.promo-images.settings.height.options__2.label"
+              "label": "t:sections.promo-sections.settings.height.options__2.label"
             },
             {
               "value": "large",
-              "label": "t:sections.promo-images.settings.height.options__3.label"
+              "label": "t:sections.promo-sections.settings.height.options__3.label"
             }
           ],
           "default": "adapt",
-          "label": "t:sections.promo-images.settings.height.label"
+          "label": "t:sections.promo-sections.settings.height.label"
         },
         {
           "type": "select",
@@ -143,20 +144,20 @@
           "options": [
             {
               "value": "small",
-              "label": "t:sections.promo-images.settings.desktop_image_width.options__1.label"
+              "label": "t:sections.promo-sections.settings.desktop_image_width.options__1.label"
             },
             {
               "value": "medium",
-              "label": "t:sections.promo-images.settings.desktop_image_width.options__2.label"
+              "label": "t:sections.promo-sections.settings.desktop_image_width.options__2.label"
             },
             {
               "value": "large",
-              "label": "t:sections.promo-images.settings.desktop_image_width.options__3.label"
+              "label": "t:sections.promo-sections.settings.desktop_image_width.options__3.label"
             }
           ],
           "default": "medium",
-          "label": "t:sections.promo-images.settings.desktop_image_width.label",
-          "info": "t:sections.promo-images.settings.desktop_image_width.info"
+          "label": "t:sections.promo-sections.settings.desktop_image_width.label",
+          "info": "t:sections.promo-sections.settings.desktop_image_width.info"
         },
         {
           "type": "select",
@@ -164,19 +165,19 @@
           "options": [
             {
               "value": "left",
-              "label": "t:sections.promo-images.settings.desktop_content_alignment.options__1.label"
+              "label": "t:sections.promo-sections.settings.desktop_content_alignment.options__1.label"
             },
             {
               "value": "center",
-              "label": "t:sections.promo-images.settings.desktop_content_alignment.options__2.label"
+              "label": "t:sections.promo-sections.settings.desktop_content_alignment.options__2.label"
             },
             {
               "value": "right",
-              "label": "t:sections.promo-images.settings.desktop_content_alignment.options__3.label"
+              "label": "t:sections.promo-sections.settings.desktop_content_alignment.options__3.label"
             }
           ],
           "default": "center",
-          "label": "t:sections.promo-images.settings.desktop_content_alignment.label"
+          "label": "t:sections.promo-sections.settings.desktop_content_alignment.label"
         },
         {
           "type": "header",
@@ -186,15 +187,15 @@
           "type": "text",
           "id": "banner_text",
           "default": "<span>Hair Envy</span> is a custom formulated blend of <span>15 natural plant oils</span> proven to help:",
-          "label": "t:sections.promo-images.settings.banner_text.label",
-          "info": "t:sections.promo-images.settings.banner_text.info"
+          "label": "t:sections.promo-sections.settings.banner_text.label",
+          "info": "t:sections.promo-sections.settings.banner_text.info"
         },
         {
           "type": "textarea",
           "id": "bullet_text",
           "default": "Bullet 1",
-          "label": "t:sections.promo-images.settings.bullet_text.label",
-          "info": "t:sections.promo-images.settings.bullet_text.info"
+          "label": "t:sections.promo-sections.settings.bullet_text.label",
+          "info": "t:sections.promo-sections.settings.bullet_text.info"
         },
         {
           "type": "header",
@@ -206,20 +207,27 @@
           "options": [
             {
               "value": "left",
-              "label": "t:sections.promo-images.settings.mobile_content_alignment.options__1.label"
+              "label": "t:sections.promo-sections.settings.mobile_content_alignment.options__1.label"
             },
             {
               "value": "center",
-              "label": "t:sections.promo-images.settings.mobile_content_alignment.options__2.label"
+              "label": "t:sections.promo-sections.settings.mobile_content_alignment.options__2.label"
             },
             {
               "value": "right",
-              "label": "t:sections.promo-images.settings.mobile_content_alignment.options__3.label"
+              "label": "t:sections.promo-sections.settings.mobile_content_alignment.options__3.label"
             }
           ],
           "default": "left",
-          "label": "t:sections.promo-images.settings.mobile_content_alignment.label"
+          "label": "t:sections.promo-sections.settings.mobile_content_alignment.label"
         }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.promo-sections.presets.name",
+      "blocks": [
       ]
     }
   ]

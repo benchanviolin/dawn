@@ -1343,7 +1343,7 @@
         "name": "Image with text"
       }
     },
-    "promo-images": {
+    "promo-sections": {
       "name": "Promo Sections",
       "settings": {
         "image": {
@@ -1430,7 +1430,7 @@
         }
       },
       "presets": {
-        "name": "Promo Images"
+        "name": "Promo Sections"
       }
     },
     "main-article": {
