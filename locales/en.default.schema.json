@@ -1343,6 +1343,96 @@
         "name": "Image with text"
       }
     },
+    "promo-images": {
+      "name": "Promo Sections",
+      "settings": {
+        "image": {
+          "label": "Image"
+        },
+        "height": {
+          "options__1": {
+            "label": "Adapt to image"
+          },
+          "options__2": {
+            "label": "Small"
+          },
+          "options__3": {
+            "label": "Large"
+          },
+          "label": "Image height"
+        },
+        "desktop_image_width": {
+          "options__1": {
+            "label": "Small"
+          },
+          "options__2": {
+            "label": "Medium"
+          },
+          "options__3": {
+            "label": "Large"
+          },
+          "label": "Desktop image width",
+          "info": "Image is automatically optimized for mobile."
+        },
+        "desktop_content_alignment": {
+          "options__1": {
+            "label": "Left"
+          },
+          "options__2": {
+            "label": "Center"
+          },
+          "options__3": {
+            "label": "Right"
+          },
+          "label": "Desktop content alignment"
+        },
+        "desktop_content_position": {
+          "options__1": {
+            "label": "Top"
+          },
+          "options__2": {
+            "label": "Middle"
+          },
+          "options__3": {
+            "label": "Bottom"
+          },
+          "label": "Desktop content position"
+        },
+        "mobile_content_alignment": {
+          "options__1": {
+            "label": "Left"
+          },
+          "options__2": {
+            "label": "Center"
+          },
+          "options__3": {
+            "label": "Right"
+          },
+          "label": "Mobile content alignment"
+        },
+        "banner_text": {
+          "label": "Banner Text",
+          "info": "Surround text with <span></span> to bold"
+        },
+        "bullet_text": {
+          "label": "Bullet Text",
+          "info": "Separate bullet points by carriage return"
+        }
+      },
+      "blocks": {
+        "image": {
+          "name": "Header",
+          "settings": {
+            "heading": {
+              "label": "Header"
+            }
+          }
+        }
+      },
+      "presets": {
+        "name": "Promo Images"
+      }
+    },
     "main-article": {
       "name": "Blog post",
       "blocks": {
