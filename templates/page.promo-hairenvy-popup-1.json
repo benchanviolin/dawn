@@ -2,13 +2,39 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "16444399349ce7b738": {
+      "type": "promo-sections",
+      "blocks": {
+        "ede9850c-debf-4c54-a567-49d628babbe2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hair-envy-top-np-2x.jpg",
+            "height": "adapt",
+            "desktop_image_width": "medium",
+            "desktop_content_alignment": "center",
+            "banner_text": "<span>Hair Envy<\/span> is a custom formulated blend of <span>15 natural plant oils<\/span> proven to help:",
+            "bullet_text": "Increase Hair Growth\nReduce Thinning Hair\nIncrease Volume\nStrengthen Roots\nCondition Scalp & Follicles\nRegenerate Cell Activity",
+            "mobile_content_alignment": "left"
+          }
+        }
+      },
+      "block_order": [
+        "ede9850c-debf-4c54-a567-49d628babbe2"
+      ],
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "16444399349ce7b738"
   ]
 }

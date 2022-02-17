@@ -1412,7 +1412,10 @@
         },
         "banner_text": {
           "label": "Banner Text",
-          "info": "Surround text with <span></span> to bold"
+          "info": "Surround text with <span><\/span> to bold"
+        },
+        "banner_background_color": {
+          "label": "Banner Background Color"
         },
         "bullet_text": {
           "label": "Bullet Text",

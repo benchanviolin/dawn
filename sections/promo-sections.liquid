@@ -45,7 +45,7 @@
             </div>
           </div>
           {% if block.settings.banner_text %}
-          <div class="promo-sections__banner-text promo-sections__color-yellow">
+          <div class="promo-sections__banner-text promo-sections__color-{{ block.settings.banner_color }}">
             <h1>
               {{ block.settings.banner_text }}
             </h1>
@@ -189,6 +189,22 @@
           "default": "<span>Hair Envy</span> is a custom formulated blend of <span>15 natural plant oils</span> proven to help:",
           "label": "t:sections.promo-sections.settings.banner_text.label",
           "info": "t:sections.promo-sections.settings.banner_text.info"
+        },
+        {
+          "type": "select",
+          "id": "banner_color",
+          "options": [
+            {
+              "value": "yellow",
+              "label": "Yellow"
+            },
+            {
+              "value": "blue",
+              "label": "Blue"
+            }
+          ],
+          "default": "yellow",
+          "label": "t:sections.promo-sections.settings.banner_background_color.label"
         },
         {
           "type": "textarea",
