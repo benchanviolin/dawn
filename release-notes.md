@@ -1,19 +1,21 @@
-Dawn 3.0.0 introduces a new suite of theme style settings to let you customize the overall look and feel of your store.
+Dawn 9.0.0 introduces app blocks in header, video upload with auto-loop, "Click and hover" zoom, new desktop header menu style, a gift card recipient form, and some performance improvements on images.
 
 ### Added
-- Layout theme settings let you change the amount of spacing between each section, as well as the spacing between repeated items within sections.
-- New theme settings let you change the look of your buttons, variant pills, inputs, badges, media, content containers, drawers, dropdowns, and pop-ups by editing their borders, corners, and shadow effects. 
-- New theme settings on cards (product cards, collection cards, blog cards, collage section cards) let you pick from different styles, define text alignment, and edit their borders, corners, and shadow effects. 
-- The new collapsible content section lets you add content to your pages using a layout composed of collapsible rows. It’s ideal to build a frequently asked questions page, or add a section with secondary information to your product pages.
-- We added new icon options to the collapsible row block on the product page. 
-- We added a new color scheme setting on many sections, allowing more flexibility to customize the look of your store. Find it in: blog posts, collage, collapsible content, collection banner, contact form, custom liquid, featured collection, featured product, multicolumn, page, and product recommendations. 
-- New top and bottom padding settings were added on most sections, letting you define the amount of space at the top and bottom of the section. Find it in: blog posts, cart items, collage, collapsible content, collection list, collection product grid, contact form, custom liquid, email signup, featured collection, featured product, footer, image with text, search results, multicolumn, product information, page, product recommendations, rich text, and video.
-- You can now define the amount of space between your header and the following section with a new bottom margin setting on the header section.
-- You can now define the amount of space between your footer and the previous section with a new top margin setting on the footer section. 
-- We added support for app blocks to the featured product section.
+- You can now incorporate eligible app blocks directly into your header section, to the left of your cart icon.
+- You can upload video files directly to Shopify and showcase them in the Video section. Additionally, you have the option to enable automatic video looping.
+- We introduced a new "Click and hover" zoom option on desktop for product page images to add a more subtle hover effect.
+- We've added a new style option to the desktop header menu, allowing you to collapse it into a hamburger icon with a popout drawer for a more compact and streamlined menu experience.
+- We added a language and currency switcher to the header section for shops selling in multiple currencies or languages.
+- The Slideshow, Image Banner, and Image with Text sections now have a subtle background animation option, which adds depth and dynamism to the overall design.
+- You can allow gift cards to be sent to a recipient with a new form on the gift card product page.
 
 ### Changed
-- The page width layout setting where you set the maximum width of your online store pages has changed to offer a range from 1000px to 1600px. 
+- Important: The Richtext section heading type has been changed. This might result in your heading text being set back to the default value "Talk about your brand". This can happen when manually upgrading to this version.
+- We reordered the "Color scheme" setting to improve hierarchy in the header section.
+- The “Follow on Shop” option is enabled by default in the footer.
+- Section headings now provide more formatting options like bold, italic, and links.
 
-### Removed
-- Important: Dawn no longer includes the Craft preset. If you’re interested in achieving the Craft look, you can now install the new [Craft theme](https://themes.shopify.com/themes/craft). 
+### Fixes and improvements
+- We improved the performance of the Multicolumn section by reducing the image sizes being loaded.
+- We fixed the blog post slides to show a preview of the subsequent slide.
+- We optimized the logo width to ensure the image looked crisp on all device sizes.
