@@ -1,17 +1,6 @@
 name: CI
 on: [push]
-jobs:
-  lhci:
-    name: Lighthouse
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Lighthouse
-        uses: shopify/lighthouse-ci-action@v1.1.1
-        with:
-          store: ${{ secrets.SHOP_STORE_OS2 }}
-          collection_handle: best-sellers
-          lhci_github_app_token: ${{ secrets.LHCI_GITHUB_TOKEN }}          
+jobs:  
   theme-check:
     name: Theme Check
     runs-on: ubuntu-latest
